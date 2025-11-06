@@ -1,0 +1,311 @@
+/* ==========================================================
+   Jamir Cardoso - Revemar Motocenter Castanhal
+   Estilo moderno, responsivo e com foco em convers�o
+   ========================================================== */
+
+/* --------- RESET --------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Momo Trust Display", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #222;
+  background-color: #fafafa;
+  line-height: 1.6;
+}
+
+/* --------- CORES E VARI�VEIS --------- */
+:root {
+  --primary: #d90429;
+  --primary-dark: #a5001d;
+  --accent: #ffb703;
+  --light: #fff;
+  --gray: #f3f3f3;
+  --text-dark: #111;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --radius: 18px;
+}
+
+/* --------- HERO --------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--light);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(rgba(255, 255, 255, 0.15), transparent 60%);
+  transform: rotate(15deg);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  max-width: 800px;
+}
+
+#primary-cta-controls {
+  text-align: center;
+  position: relative;
+  top: 70vh;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px black;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* --------- CTA PRINCIPAL --------- */
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light);
+  background: var(--primary);
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.primary-cta {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to top, limegreen, green);
+  color: #fff;
+}
+
+.primary-cta:hover {
+  background: #ffca2c;
+}
+
+.secondary-cta {
+  margin-top: 1rem;
+  background: var(--primary);
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  color: #eee;
+}
+
+/* --------- FOTO DE PERFIL --------- */
+.profile-photo {
+  height: 400px;
+  margin-top: 1.5rem;
+}
+
+/* --------- SE��ES --------- */
+section {
+  padding: 5rem 1rem;
+}
+
+section h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+section p {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  color: #333;
+}
+
+/* --------- CREDIBILIDADE --------- */
+.section-credibility {
+  background: var(--gray);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.features-grid div {
+  background: var(--light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.features-grid div:hover {
+  transform: translateY(-5px);
+}
+
+.features-grid i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+/* --------- MODALIDADES --------- */
+.section-modalities .modalities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.section-modalities .card {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.section-modalities .card:hover {
+  transform: translateY(-5px);
+}
+
+.section-modalities h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* --------- GALERIA --------- */
+.section-gallery .motorcycle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.carousel {
+  box-shadow: var(--shadow);
+  background: radial-gradient(white, whitesmoke, lightgray, rgb(192, 182, 182));
+  overflow: hidden;
+}
+
+.carousel h2 {
+  font-size: 1.4rem;
+  background: var(--primary);
+}
+
+/* --------- PROVAS SOCIAIS --------- */
+.section-proof {
+  background: var(--gray);
+}
+
+/* --------- FOOTER --------- */
+footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+footer h2 {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.footer-cta {
+  margin: 2rem auto;
+  display: inline-block;
+}
+
+footer .contact-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+#zap-icon{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 80px;
+  width: 80px;
+}
+/* --------- RESPONSIVIDADE --------- */
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero-title {
+    margin: 10px;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .profile-cta {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .profile-description {
+    flex-direction: column;
+  }
+}
