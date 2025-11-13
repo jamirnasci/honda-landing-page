@@ -1,311 +1,359 @@
-/* ==========================================================
-   Jamir Cardoso - Revemar Motocenter Castanhal
-   Estilo moderno, responsivo e com foco em convers�o
-   ========================================================== */
-
-/* --------- RESET --------- */
-
-@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Momo Trust Display", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  color: #222;
-  background-color: #fafafa;
-  line-height: 1.6;
-}
-
-/* --------- CORES E VARI�VEIS --------- */
 :root {
-  --primary: #d90429;
-  --primary-dark: #a5001d;
-  --accent: #ffb703;
-  --light: #fff;
-  --gray: #f3f3f3;
-  --text-dark: #111;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --radius: 18px;
+  --primary: red;
+  --primary-overlay: rgba(255, 0, 0, 0.493);
+  --dark-overlay: #0000008a;
+  --dark: #161616;
+  --light: #f0f0f0;
 }
 
-/* --------- HERO --------- */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  color: var(--light);
+  z-index: 1;
+}
+
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(60deg, rgba(0, 0, 0, 0.5) 20%, var(--dark)), url('../img/bg2.webp');
+  height: 100vh;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: var(--light);
+  padding: 50px;
+  max-width: 700px;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: var(--light);
+  text-shadow: 0 0 5px var(--dark);
+  border-radius: 40px;
+  text-decoration: none;
+  background: linear-gradient(20deg, lime, limegreen, forestgreen);
+  font-weight: bold;
+  max-width: 700px;
+}
+
+.hero-cta i {
+  margin-right: 10px;
+}
+
+.hero-photo {
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  height: 100%;
+}
+
+.hero-photo img {
+  max-height: 500px;
+}
+
+.services-section {
+  background: linear-gradient(to bottom, var(--dark-overlay), rgba(0, 0, 0, 0)), url('../img/motocycles/honda-capa.jpg');
+  background-position: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  color: var(--light);
+}
+
+.feature-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  min-height: 300px;
+  border-radius: 30px;
+  box-shadow: 0 0 5px var(--light);
+  backdrop-filter: blur(5px);
   color: var(--light);
-  position: relative;
-  overflow: hidden;
+  transition: ease 0.5s;
 }
 
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(rgba(255, 255, 255, 0.15), transparent 60%);
-  transform: rotate(15deg);
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px var(--light);
 }
 
-.hero .container {
-  position: relative;
-  z-index: 2;
+.feature-card h3 {
+  font-size: 1.2em;
+}
+
+.feature-icon {
+  margin: 10px;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--light);
+  font-size: 2.5em;
+}
+
+.consorcio-section {
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 80px 10%;
+  background: linear-gradient(45deg, rgb(70, 0, 0), rgba(0,0,0,0.5)), url('../img/consorcio-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  flex-wrap: wrap;
+}
+
+.consorcio-img {
+  flex: 1;
+  min-width: 300px;
   text-align: center;
-  text-shadow: 0 0 5px black;
-  max-width: 800px;
 }
 
-#primary-cta-controls {
-  text-align: center;
-  position: relative;
-  top: 70vh;
+.consorcio-img img {
+  max-width: 100%;
+  border-radius: 12px;
 }
 
-.hero h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px black;
+.consorcio-content {
+  flex: 1;
+  min-width: 300px;
 }
 
-.hero p {
+.consorcio-content h2 {
+  font-size: 2.2rem;
+  color: #c20000;
+  margin-bottom: 20px;
+}
+
+.consorcio-content p {
   font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* --------- CTA PRINCIPAL --------- */
-.cta-button {
-  display: inline-block;
-  text-decoration: none;
+  line-height: 1.7;
   color: var(--light);
-  background: var(--primary);
-  padding: 1.2rem 1.5rem;
-  font-weight: 600;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
-.cta-button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px);
+.consorcio-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
 }
 
-.primary-cta {
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  background: linear-gradient(to top, limegreen, green);
+.consorcio-content li {
+  font-size: 1rem;
+  color: var(--light);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.consorcio-content li i{
+  margin: 5px;
+  font-size: 1.2em;
+}
+
+.consorcio-cta {
+  background: #c20000;
   color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.primary-cta:hover {
-  background: #ffca2c;
+.consorcio-cta:hover {
+  background: #a00000;
 }
 
-.secondary-cta {
-  margin-top: 1rem;
-  background: var(--primary);
+.financiamento-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  background: linear-gradient(45deg, rgb(0, 1, 37), rgba(0,0,0,0)), url('../img/financiamento-bg.png');
+  background-position: right;
+  flex-wrap: wrap;
 }
 
-.cta-note {
-  font-size: 0.9rem;
-  margin-top: 0.6rem;
-  color: #eee;
+.financiamento-content {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 40px;
 }
 
-/* --------- FOTO DE PERFIL --------- */
-.profile-photo {
-  height: 400px;
-  margin-top: 1.5rem;
+.financiamento-content h2 {
+  font-size: 2.2rem;
+  color: #2828ff;
+  margin-bottom: 20px;
 }
 
-/* --------- SE��ES --------- */
-section {
-  padding: 5rem 1rem;
+.financiamento-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--light);
+  margin-bottom: 20px;
 }
 
-section h2 {
+.financiamento-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.financiamento-content li {
+  font-size: 1rem;
+  color: var(--light);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.financiamento-content li i{
+  margin: 5px;
+  font-size: 1.2em;
+}
+
+.financiamento-cta {
+  background: #2828ff;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.financiamento-cta:hover {
+  background: #2828ff;
+}
+
+.financiamento-img {
+  flex: 1;
+  min-width: 300px;
   text-align: center;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
 }
 
-section p {
+.financiamento-img img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.motos-section{
+  background-color: black;
+}
+
+.motos-section h2{
+  color: var(--light);
+}
+
+.moto-card {
+  padding: 10px;
+  box-shadow: 0 0 5px var(--light);
+  background: linear-gradient(to bottom, white, black);
+  border-radius: 30px;  
+  color: var(--light);
+}
+
+.moto-info a {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(60deg, limegreen, forestgreen);
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  color: var(--light);
+  text-shadow: 0 0 5px var(--dark);
   text-align: center;
-  max-width: 750px;
-  margin: 0 auto 2rem;
-  color: #333;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 5px var(--dark-overlay);
+  transition: ease 0.5s;
 }
 
-/* --------- CREDIBILIDADE --------- */
-.section-credibility {
-  background: var(--gray);
+.moto-info a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px black;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
+.entregas-section {
+  background-color: var(--dark);
+  padding: 20px;
+  color: var(--light);
 }
 
-.features-grid div {
-  background: var(--light);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+#carouselEntregas .carousel-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
 }
 
-.features-grid div:hover {
-  transform: translateY(-5px);
-}
-
-.features-grid i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 0.6rem;
-}
-
-/* --------- MODALIDADES --------- */
-.section-modalities .modalities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.section-modalities .card {
-  background: var(--light);
-  border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.section-modalities .card:hover {
-  transform: translateY(-5px);
-}
-
-.section-modalities h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-/* --------- GALERIA --------- */
-.section-gallery .motorcycle-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.carousel {
-  box-shadow: var(--shadow);
-  background: radial-gradient(white, whitesmoke, lightgray, rgb(192, 182, 182));
-  overflow: hidden;
-}
-
-.carousel h2 {
-  font-size: 1.4rem;
-  background: var(--primary);
-}
-
-/* --------- PROVAS SOCIAIS --------- */
-.section-proof {
-  background: var(--gray);
-}
-
-/* --------- FOOTER --------- */
-footer {
-  background: #111;
-  color: #ddd;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-footer h2 {
-  color: var(--accent);
-  font-size: 1.8rem;
-}
-
-.footer-cta {
-  margin: 2rem auto;
-  display: inline-block;
-}
-
-footer .contact-info {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-#zap-icon{
+#zap-icon {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  height: 80px;
-  width: 80px;
+  bottom: 10px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
 }
-/* --------- RESPONSIVIDADE --------- */
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
+  .links-box {
+    display: none;
+  }
+
   .hero {
-    text-align: center;
-  }
-
-  .hero-title {
-    margin: 10px;
-  }
-
-  .hero-content {
-    max-width: none;
-  }
-
-  .profile-cta {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center;
-  }
-
-  .cta-button {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .profile-description {
+    position: relative;
     flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-text {
+    padding: 20px;
+  }
+
+  .hero-photo img {
+    height: 400px;
+  }
+
+  .hero-cta {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+  }
+
+  .consorcio-section{
+    background-position: right;
+  }
+
+  .financiamento-section{
+    background-position: center right;
+  }
+
+  .feature-card{
+    backdrop-filter: blur(4px);
+  }
+
+  .services-section{
+    background-image: url('../img/motocycles/mobile-background.webp');
+    background-size: cover;
   }
 }
